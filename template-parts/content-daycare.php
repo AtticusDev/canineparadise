@@ -13,7 +13,7 @@
 	<div class="container mb-0">
 		<div class="row">
 			<div class="home-content">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png"></a>
 
 
 
@@ -140,6 +140,7 @@
 			<div class="col-md-8">
 
 <?php the_field('booking'); ?>
+	    		<p><a href="/contact" class="btn btn-dark button text-white mb-4 mt-4" role="button"> - MAKE A BOOKING - </a></p>
 
 			</div>
 		</div>

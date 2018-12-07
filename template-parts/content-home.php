@@ -13,7 +13,7 @@
 	<div class="container mb-0">
 		<div class="row">
 			<div class="home-content">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png"></a>
 
 
 
@@ -35,6 +35,7 @@
 		$service_boxes2 = get_field( 'home_service_box_2' );
 		$service_boxes3 = get_field( 'home_service_box_3' );
 		$service_boxes4 = get_field( 'home_service_box_4' );
+		$service_boxes5 = get_field( 'home_service_box_5' );
 		?>
 
 		<div class="row">
@@ -47,6 +48,19 @@
 
 		</div>
 	</div>
+
+	<div class="container mt-0">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 pl-0 pr-0 image-wrapperE" style="background-image: url('<?php echo $service_boxes5['image']['url']; ?>')">
+				<h1><?php echo $service_boxes5['title']; ?><br />
+					<span class="subHead"><?php echo $service_boxes5['sub_title']; ?></span></h1>
+
+
+		    	<a href="<?php echo $service_boxes5['link']['url']; ?>" target="_blank" class="btn button">- <?php echo $service_boxes5['text']; ?> -</a>
+			</div>
+		</div>
+	</div>
+
 	<div class="container mt-0">
 		<div class="row">
 			<div class="col-sm-12 col-md-6 pl-0 pr-0 image-wrapperA" style="background-image: url('<?php echo $service_boxes3['image']['url']; ?>')">

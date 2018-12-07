@@ -34,7 +34,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 
-			    <nav class="navbar navbar-expand-lg navbar-dark">
+			    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 			    	<div class="container">
 						<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>

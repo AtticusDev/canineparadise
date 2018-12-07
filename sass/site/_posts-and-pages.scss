@@ -86,15 +86,18 @@ body
 {
   font-family:'Houschka Rounded Alt W01 Medium';
   line-height: 1.7rem;
-  font-size: 0.8rem;
-  color: $gray-700;
+  font-size: 0.9rem;
+  color: $gray-800;
   background-color: #000000;
 }
 .uppercaseText {
   text-transform: uppercase;
  letter-spacing: 0.1rem;  
 }
-
+.blackText
+{
+  color: black;
+}
 .home-content img {
  margin-bottom: 2rem; 
 }
@@ -157,7 +160,7 @@ footer .card {
 }
 .image-wrapperC {
     width: 100%;
-    height: 33.33%;
+    height: 34%;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
@@ -169,18 +172,14 @@ footer .card {
     background-size: cover;
     background-position: center center;
 }
-
-/*
-
-.img_container {
-    text-align:center;
+.image-wrapperE {
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
 }
 
-.img_container img {
-    min-height: 100%;
-}
-
-*/
 
 
 .image-wrapperA .button {
@@ -200,6 +199,33 @@ footer .card {
     letter-spacing: 0.2rem;
     color: black;
 }
+.image-wrapperE h1 {
+  position: absolute;
+  top: 3rem;
+  text-tranform:none;
+  width:100%;
+  .subHead {
+    font-size: 1rem;
+  }
+}
+
+.image-wrapperE .button {
+    position:absolute; 
+    background: rgba(255,255,255,0.6);
+    bottom:20px;
+    padding-left:1rem;
+    padding-right:1rem;
+    width:30%;
+    left:35%;
+    border-radius:0px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    color: black;
+}
+
+
+
 .button
 {
    border-radius:0px;
@@ -217,7 +243,7 @@ footer .card {
   background-color: #f1f3f2;
 }
 .bg-dkgray {
-  background-color: #98999d;
+  background-color: #a8a9ae;
 }
 .bg-gray10
 {
@@ -308,7 +334,7 @@ body .gform_wrapper .gform_footer input[type=submit]
     padding-top:0.2rem;
     padding-bottom:0.2rem;
     h1 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         line-height: 1.2rem;
         letter-spacing: 0.2rem;
         margin: 1rem;
@@ -339,16 +365,37 @@ body .gform_wrapper .gform_footer input[type=submit]
     overflow: hidden;
     background-size: cover;
     background-position: center center;
-}
+  }
 
   .image-wrapperD {
     display: none;
   }
+
+  .image-wrapperE {
+    height: 30vh;
+  }
+
+  .image-wrapperE h1{
+  top: 1.5rem;
+  text-transform: lowercase;
+  line-height: 1;
+  width:100%;
+  .subHead {
+    font-size: 1rem;
+  }
+
+  }
+
 
   .info_container {
     text-align:center;
     padding:2rem 2rem;
     height:auto;
   }
+  body #gform_wrapper_1 .gform_footer input[type=submit]
+  {
+     background: #ffffff;
+  }
+
 }
 

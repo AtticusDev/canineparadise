@@ -13,7 +13,7 @@
 	<div class="container mb-0">
 		<div class="row">
 			<div class="home-content">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png"></a>
 
 
 
@@ -30,70 +30,62 @@
 		</div>
 	</div>
 	<div class="container mt-0">
-		<div class="row justify-content-md-center bg-white pt-5 pb-5">
-			<div class="col-md-8">
-				<?php the_field('overview'); ?>
-			</div>
-		</div>
-	</div>
-	<div class="container mt-0">
 		<div class="row">
 
-				<?php
-				$grooming = get_field( 'grooming_services' );
 
-				if( $grooming ): ?>
+		<?php
+		$overview = get_field( 'overview' );
 
-					<div class="col-sm-12 col-md-6 pl-0 pr-0">
-						<div class="image-wrapperC" style="background-image: url('<?php echo $grooming['image1']['url']; ?>')">
-						</div>
-						<div class="image-wrapperD" style="background-image: url('<?php echo $grooming['image2']['url']; ?>')">
-						</div>
-						<div class="image-wrapperD" style="background-image: url('<?php echo $grooming['image3']['url']; ?>')">
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 info_container bg-ltgray">
-						<?php echo $grooming['description']; ?>
-					</div>
+		if( $overview ): ?>
+	
+			<div class="col-sm-12 col-md-6 info_container bg-ltgray uppercaseText">
+				<?php echo $overview['overview_text']; ?>
 
-					<?php
-				endif;
-				?>
-
+			</div>
+			<div class="col-sm-12 col-md-6 pl-0 pr-0 image-wrapperB" style="background-image: url('<?php echo $overview['overview_image']['url']; ?>')">
+			</div>
+		<?php endif; ?>
 		</div>
 	</div>
 
 	<div class="container mt-0">
-		<div class="row justify-content-md-center bg-white pt-5 pb-5">
-			<div class="col-md-8">
-				<?php the_field('prices'); ?>
+		<div class="row">
+			<div class="col-sm-12 pt-5 pb-3 bg-white">
+				<?php
+				// check if the repeater field has rows of data
+				if( have_rows('prices') ):
+				 	// loop through the rows of data
+				    while ( have_rows('prices') ) : the_row();
+				    	$dog = get_sub_field('text');
+				    	$cost = get_sub_field('cost');
+				    	$color = get_sub_field('colour');
+				 		?>
+				<div class="row justify-content-md-center">
+					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $dog; ?></div>
+					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $cost; ?></div>
+				</div>
+				<?php
+					endwhile;
+				endif;
+				?>
+				<p>We are not currently offering a full grooming service.</p>
+
+			</div>
+		</div>
+		<div class="row justify-content-md-center bg-white">
+			<div class="col-md-8 mb-3">
+	    		<p><a href="/contact" class="btn btn-dark button text-white mb-4" role="button"> - MAKE A BOOKING - </a></p>
+
 			</div>
 		</div>
 	</div>
+
 	<div class="container mt-0">
 		<div class="row justify-content-md-center bg-ltgray pt-5 pb-5">
 			<div class="col-md-8">
-				<?php the_field('booking'); ?>
+				<?php the_field('notice'); ?>
 
 			</div>
-		</div>
-	</div>
-
-
-
-	<div class="container mt-0">
-		<div class="row">
-			<?php
-			$viewing_panel = get_field( 'viewing' );
-
-			if( $viewing_panel ): ?>
-		
-			<div class="col-sm-12 col-md-6 pl-0 pr-0 image-wrapperB" style="background-image: url('<?php echo $viewing_panel['viewing_image']['url']; ?>')">
-			</div>
-				<div class="col-sm-12 col-md-6 info_container bg-dkgray uppercaseText text-black">
-					<?php echo $viewing_panel['viewing_text']; ?>
-				</div>
-			<?php endif; ?>
 		</div>
 	</div>
 

@@ -13,7 +13,7 @@
 	<div class="container mb-3">
 		<div class="row justify-content-center">
 			<div class="home-content">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png"></a>
 
 
 
@@ -41,7 +41,7 @@
 			<div class="col-sm-12 col-md-6 info_container bg-white text-uppercase">
 				<?php the_field('address_panel'); ?>
 			</div>
-			<div class="col-sm-12 col-md-6 info_container bg-dkgray">
+			<div class="col-sm-12 col-md-6 info_container bg-ltgray">
 
 				<?php the_field('enquiry_form'); ?>
 

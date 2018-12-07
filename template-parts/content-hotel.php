@@ -13,7 +13,7 @@
 	<div class="container mb-0">
 		<div class="row">
 			<div class="home-content">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-logo.png"></a>
 
 
 
@@ -29,23 +29,55 @@
 			</div>
 		</div>
 	</div>
+
+
+
 	<div class="container mt-0">
 		<div class="row">
-		<?php
-		$top_panels = get_field( 'top_panels' );
+			<div class="col-sm-12 info_container">
+				<?php
+				// check if the repeater field has rows of data
+				if( have_rows('prices') ):
+				 	// loop through the rows of data
+				    while ( have_rows('prices') ) : the_row();
+				    	$dog = get_sub_field('dog_number');
+				    	$cost = get_sub_field('cost');
+				    	$color = get_sub_field('color');
+				 		?>
+				<div class="row justify-content-md-center">
+					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $dog; ?></div>
+					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $cost; ?></div>
+				</div>
+				<?php
+					endwhile;
+				endif;
+				?>
+				<p>Prices are per day and include VAT</p>
 
-		if( $top_panels ): ?>
-	
-			<div class="col-sm-12 col-md-6 info_container bg-ltgray uppercaseText">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/gold-dog.png" class="mb-4"/>
-				<?php echo $top_panels['left_panel']; ?>
 			</div>
-			<div class="col-sm-12 col-md-6 info_container bg-dkgray">
-				<?php echo $top_panels['right_panel']; ?>
+		</div>
+		<div class="row justify-content-md-center bg-white">
+			<div class="col-md-8 mb-5">
+
+				<?php the_field('description'); ?>
+
+	    		<p><a href="/contact" class="btn btn-dark button text-white mb-4 mt-4" role="button"> - MAKE A BOOKING - </a></p>
+
+	    		<p><img src="<?php bloginfo('stylesheet_directory'); ?>/images/gold-dog.png" /><p/>
+
+
+
+
 			</div>
-		<?php endif; ?>
 		</div>
 	</div>
+
+
+
+
+
+
+
 	<div class="container mt-0">
 		<div class="row">
 			<!-- Carousel section -->
@@ -103,45 +135,32 @@
 			<!-- End Carousel section -->
 		</div>
 	</div>
+
+
 	<div class="container mt-0">
 		<div class="row">
-			<div class="col-sm-12 info_container">
-				<?php
-				// check if the repeater field has rows of data
-				if( have_rows('prices') ):
-				 	// loop through the rows of data
-				    while ( have_rows('prices') ) : the_row();
-				    	$dog = get_sub_field('dog_number');
-				    	$cost = get_sub_field('cost');
-				    	$color = get_sub_field('color');
-				 		?>
-				<div class="row justify-content-md-center">
-					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $dog; ?></div>
-					<div class="col col-md-2 pricing text-white" style="background-color:<?php echo $color; ?>;"><?php echo $cost; ?></div>
-				</div>
-				<?php
-					endwhile;
-				endif;
-				?>
-				<p>Prices are per day and include VAT</p>
+		<?php
+		$top_panels = get_field( 'top_panels' );
 
+		if( $top_panels ): ?>
+	
+			<div class="col-sm-12 col-md-6 info_container bg-white uppercaseText">
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/gold-dog.png" class="mb-4"/>
+				<?php echo $top_panels['left_panel']; ?>
 			</div>
-		</div>
-		<div class="row justify-content-md-center bg-white">
-			<div class="col-md-8 mb-5">
-
-				<?php the_field('description'); ?>
-
-	    		<p><a href="#" class="btn btn-dark button text-white mb-4 mt-4" role="button"> - MAKE A BOOKING - </a></p>
-
-	    		<p><img src="<?php bloginfo('stylesheet_directory'); ?>/images/gold-dog.png" /><p/>
-
-
-
-
+			<div class="col-sm-12 col-md-6 info_container bg-ltgray">
+				<?php echo $top_panels['right_panel']; ?>
 			</div>
+		<?php endif; ?>
 		</div>
 	</div>
+
+
+
+
+
+
+
 	<div class="container mt-0">
 		<div class="row">
 				<?php 

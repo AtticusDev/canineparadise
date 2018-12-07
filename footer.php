@@ -20,10 +20,10 @@
 				<div class="col-md-3 justify-content-center">
 					<?php dynamic_sidebar( 'footer-1' ); ?>
 				</div><!--  .col-md-4 -->
-				<div class="col-md-3">
+				<div class="col-md-4 uppercaseText">
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				</div><!--  .col-md-4 -->
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<?php dynamic_sidebar( 'footer-3' ); ?>
 				</div><!--  .col-md-4 -->
 			</div><!--  .row -->
@@ -42,5 +42,4 @@
 <?php wp_footer(); ?>
 
 </body>
-
 </html>

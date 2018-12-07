@@ -1,9 +1,12 @@
 .site-header {
-	margin-bottom: 3em;
+	margin-bottom: 6em;
 }
 
 //navigation rollover bars
 
+.navbar {
+	background-color: #000000;
+}
 .navbar-nav li{
   display: inline-block;
   vertical-align: top;
